@@ -36,3 +36,10 @@
   margin-bottom: 5vh;
   margin-top: 5vh;
 }
+
+.categories {
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  margin-top: 25vh;
+}

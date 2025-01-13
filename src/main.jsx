@@ -7,6 +7,7 @@ import Shop from "./Shop";
 import Contact from "./Contact";
 import About from "./About";
 import ErrorPage from "./ErrorPage";
+import Category from "./Category";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/category",
+    element: <Category />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
