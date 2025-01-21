@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 
+//displays an error if a link is attempted to be accessed that does not exist
 const ErrorPage = () => {
   return (
     <div className="error-message">
