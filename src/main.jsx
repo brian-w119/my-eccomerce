@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import About from "./About";
 import ErrorPage from "./ErrorPage";
 import Category from "./Category";
+import Hats from "./eachCategory/Hats";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/category",
     element: <Category />,
+  },
+  {
+    path: "/hats",
+    element: <Hats />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
