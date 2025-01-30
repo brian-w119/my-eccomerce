@@ -72,8 +72,21 @@ p {
   margin-top: 25vh;
 }
 
-ul {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.list {
+  color: white;
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  font-size: large;
+}
+
+li {
+  margin-top: 3vh;
+  list-style-type: none;
+}
+
+.paragraph3 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
 }

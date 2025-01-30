@@ -1,6 +1,7 @@
 import React from "react";
 import Navs from "./Navs";
 import StoreName from "./StoreName";
+import "./style.css";
 
 const Contact = () => {
   const contactInfo = [
@@ -9,7 +10,9 @@ const Contact = () => {
     "Canada - +3(807) 77878 777, canadaemail@azure.com",
     "Mexico - +6(566) 99887 59855, mexicoemail@azure.com",
   ];
-  const contactDetails = contactInfo.map((countries) => <li>countries</li>);
+  const contactDetails = contactInfo.map((countries) => (
+    <li key={countries}>{countries}</li>
+  ));
   return (
     <div>
       <StoreName />
@@ -17,6 +20,9 @@ const Contact = () => {
       <p className="paragraph3">
         See the contact details for our various locations
       </p>
+      <div className="list">
+        <ul>{contactDetails}</ul>
+      </div>
     </div>
   );
 };
