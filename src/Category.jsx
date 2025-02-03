@@ -2,30 +2,29 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Navs from "./Navs";
 import StoreName from "./StoreName";
-import hat from "./assets/hat.png";
-import hoodies from "./assets/hoodies.png";
+import watch from "./assets/watch.png";
 import sweatBottom from "./assets/sweatBottom.png";
 import tShirt from "./assets/tShirt.png";
 import "./style.css";
 
 const Category = () => {
   return (
-    <div>
+    <div className="cats">
       <StoreName />
       <Navs />
       <nav>
         <ul className="categories">
-          <Link className="img1">
-            <img src={hat} />
+          <Link className="img">
+            <img src={watch} />
+            {<div className="text">Jewellry</div>}
           </Link>
-          <Link className="img2">
-            <img src={hoodies} />
-          </Link>
-          <Link>
+          <Link className="img">
             <img src={sweatBottom} />
+            {<div className="text">sweatpants</div>}
           </Link>
-          <Link>
+          <Link className="description img">
             <img src={tShirt} />
+            {<div className="text">T-Shirts</div>}
           </Link>
         </ul>
       </nav>
