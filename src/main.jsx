@@ -8,7 +8,9 @@ import Contact from "./Contact";
 import About from "./About";
 import ErrorPage from "./ErrorPage";
 import Category from "./Category";
-import Hats from "./eachCategory/Hats";
+import Jewellry from "./selectCategory/Jewellry";
+import Misc from "./selectCategory/Misc";
+import Tshirts from "./selectCategory/Tshirts";
 
 const router = createBrowserRouter([
   {
@@ -32,9 +34,19 @@ const router = createBrowserRouter([
     path: "/category",
     element: <Category />,
   },
+
   {
-    path: "/hats",
-    element: <Hats />,
+    path: "/category/jewellry",
+    element: <Jewellry />,
+  },
+  {
+    path: "/category/miscallaneous",
+    element: <Misc />,
+  },
+
+  {
+    path: "/category/tshirts",
+    element: <Tshirts />,
   },
 ]);
 createRoot(document.getElementById("root")).render(

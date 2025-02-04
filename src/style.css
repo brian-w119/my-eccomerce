@@ -43,9 +43,8 @@ img:hover {
 }
 
 .background-image {
-  width: 100vw;
-  height: auto;
   pointer-events: none;
+  width: 100vw;
 }
 
 body {
@@ -109,6 +108,12 @@ li {
 
 .cats {
   justify-self: center;
+}
+
+img {
+  width: 10vw;
+  height: 10vw;
+  object-fit: cover;
 }
 
 .text {
