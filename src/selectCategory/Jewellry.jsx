@@ -1,13 +1,15 @@
 import React from "react";
 import StoreName from "../StoreName";
 import Navs from "../Navs";
+import Image from "../FetchData";
 
 const Jewellry = () => {
+  // useEffect();
   return (
     <div>
       <StoreName />
       <Navs />
-      <p>Jewellry Test</p>
+      <Image />
     </div>
   );
 };

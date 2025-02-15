@@ -45,6 +45,7 @@ img:hover {
 .background-image {
   pointer-events: none;
   width: 100vw;
+  height: auto;
 }
 
 body {
@@ -120,4 +121,32 @@ img {
   color: white;
   text-align: center;
   margin-top: 2vh;
+}
+.title > * {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.jewel1 {
+  width: 12vw;
+  height: auto;
+}
+
+.furtherCat {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  margin-top: 18vh;
+  margin-left: auto;
+  margin-right: auto;
+  height: 15vh;
+}
+
+.furtherCat > *:hover {
+  transform: scale(1.1);
+}
+
+.furtherCat > * {
+  height: auto;
+  object-fit: contain;
 }
