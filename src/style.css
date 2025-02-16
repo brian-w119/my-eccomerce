@@ -139,14 +139,22 @@ img {
   margin-top: 18vh;
   margin-left: auto;
   margin-right: auto;
-  height: 15vh;
+  height: 35vh;
 }
 
 .furtherCat > *:hover {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 
 .furtherCat > * {
   height: auto;
   object-fit: contain;
+}
+
+.itemDesc > p {
+  color: blue;
+  width: 10vw;
+}
+
+.furtherCat > .itemDesc {
 }
