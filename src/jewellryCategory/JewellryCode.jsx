@@ -10,17 +10,7 @@ const JewellryValues = () => {
   const product3 = `${baseUrl}${productID3}`;
   const jewellry = [product1, product2, product3];
 
-  const values = [
-    productID1,
-    productID2,
-    productID3,
-    product1,
-    product2,
-    product3,
-    jewellry,
-  ];
-
-  return values;
+  return jewellry;
 };
 
 export default JewellryValues;
