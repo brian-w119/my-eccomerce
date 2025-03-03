@@ -156,5 +156,30 @@ img {
   width: 10vw;
 }
 
-.furtherCat > .itemDesc {
+.instruction {
+  text-align: center;
+  margin-top: 10vh;
+  margin-bottom: -10vh;
+  font-size: x-large;
+  color: white;
+}
+
+.basket {
+  background-color: white;
+  width: 30vw;
+  height: 60vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10vh;
+}
+
+.basketFirstCat {
+  color: black;
+}
+
+.basket > * {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  height: 33.3%;
 }
