@@ -167,7 +167,7 @@ img {
 .basket {
   background-color: white;
   width: 30vw;
-  height: 60vh;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10vh;
@@ -181,5 +181,56 @@ img {
   display: flex;
   justify-content: center;
   border: 1px solid black;
-  height: 33.3%;
+  height: auto;
+}
+
+.checkout-clear {
+  display: flex;
+  position: absolute;
+  right: 17vw;
+  top: 55%;
+  gap: 3vw;
+}
+
+.checkout,
+.clearBasket {
+  width: 5.5vw;
+  height: 5vh;
+  font-size: larger;
+  text-align: center;
+  color: white;
+}
+
+.checkout {
+  background-color: green;
+}
+
+.clearBasket {
+  background-color: red;
+}
+
+.checkout-clear > button:hover {
+  transform: scale(1.1);
+}
+
+.basketItems {
+  margin-top: 7vh;
+}
+
+.itemsOnSale > * {
+  color: black;
+  text-align: left;
+}
+
+.category1,
+.category2,
+.category3 {
+  display: block;
+  height: auto;
+}
+
+.category1,
+.category2,
+.category3 > h2 {
+  text-align: center;
 }

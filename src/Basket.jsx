@@ -1,11 +1,15 @@
 import React from "react";
 import Navs from "./Navs";
 import StoreName from "./StoreName";
-import BasketContainer from "./BasketContainer";
+import BasketContainer from "./BasketInnerSection";
 
 const Basket = () => {
   const Buttons = (prop) => {
-    return <button type="button">{prop.buttonText}</button>;
+    return (
+      <button className={prop.className} type="button">
+        {prop.buttonText}
+      </button>
+    );
   };
 
   return (
@@ -13,7 +17,10 @@ const Basket = () => {
       <StoreName />
       <Navs />
       <BasketContainer />
-      <Buttons />
+      <div className="checkout-clear">
+        <Buttons buttonText="CheckOut" className="checkout" />
+        <Buttons buttonText="Clear Basket" className="clearBasket" />
+      </div>
     </div>
   );
 };
