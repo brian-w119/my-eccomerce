@@ -1,12 +1,27 @@
+//this module contains the code for the inner section of the basket page
+
 import React from "react";
 import PropTypes from "prop-types";
+
+const InputElement = () => {
+  return <input min="0" type="number" />;
+};
 
 const BasketItems = ({ item1, item2, item3 }) => {
   return (
     <div className="itemsOnSale">
-      <p>{item1}</p>
-      <p>{item2}</p>
-      <p>{item3}</p>
+      <div className="items">
+        <p>{item1}</p>
+        <InputElement />
+      </div>
+      <div className="items">
+        <p>{item2}</p>
+        <InputElement />
+      </div>
+      <div className="items">
+        <p>{item3}</p>
+        <InputElement />
+      </div>
     </div>
   );
 };
