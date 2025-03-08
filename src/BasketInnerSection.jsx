@@ -1,26 +1,38 @@
 //this module contains the code for the inner section of the basket page
 
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-const InputElement = () => {
-  return <input min="0" type="number" />;
-};
-
 const BasketItems = ({ item1, item2, item3 }) => {
+  const [itemCountItemA, setItemCountItemA] = useState(0);
+  const [itemCountItemB, setItemCountItemB] = useState(0);
+  const [itemCountItemC, setItemCountItemC] = useState(0);
+
+  const handleChange1 = (event) => setItemCountItemA(event.target.value);
+  const handleChange2 = (event) => setItemCountItemB(event.target.value);
+  const handleChange3 = (event) => setItemCountItemC(event.target.value);
+
+  const clearBasket = (setItemCount, itemCountItem) => {
+    setItemCount((itemCountItem = 0));
+  };
+
+  const InputElement = ({ change, currentVal }) => {
+    return <input onChange={change} value={currentVal} type="number" min="0" />;
+  };
+
   return (
     <div className="itemsOnSale">
       <div className="items">
         <p>{item1}</p>
-        <InputElement />
+        <InputElement change={handleChange1} currentVal={itemCountItemA} />
       </div>
       <div className="items">
         <p>{item2}</p>
-        <InputElement />
+        <InputElement change={handleChange2} currentVal={itemCountItemB} />
       </div>
       <div className="items">
         <p>{item3}</p>
-        <InputElement />
+        <InputElement change={handleChange3} currentVal={itemCountItemC} />
       </div>
     </div>
   );
@@ -58,10 +70,29 @@ const BasketContainer = () => {
   );
 };
 
+//sets the prop types
 BasketItems.propTypes = {
   item1: PropTypes.string.isRequired,
   item2: PropTypes.string.isRequired,
   item3: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired,
+  change: PropTypes.func.isRequired,
+  currentVal: PropTypes.number.isRequired,
 };
 
 export default BasketContainer;
+
+/*
+//increases number of items in the basket
+const addItem = () => {
+  setItemCount((count) => count + 1);
+};
+
+//decreases number of items in the basket
+const removeItem = () => {
+  // @ts-ignore
+  setItemCount((count) => {
+    count > 0 ? count - 1 : 0;
+  });
+};
+*/
