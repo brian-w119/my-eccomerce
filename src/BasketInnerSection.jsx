@@ -10,6 +10,7 @@ const BasketItems = ({
   item1,
   item2,
   item3,
+  UnitPrice,
   itemCount1,
   setItemCount1,
   itemCount2,
@@ -24,42 +25,42 @@ const BasketItems = ({
   item3Price,
   setItem3Price,
   jewellryAprice,
+  jewellryBPrice,
+  jewellryCprice,
+  miscAprice,
+  miscBPrice,
+  miscCprice,
+  tShirtAunitPrice,
+  tShirtBunitPrice,
+  tShirtCunitPrice,
+  unitPrice,
+  item1UnitPrice,
+  item2UnitPrice,
+  item3UnitPrice,
 }) => {
-  /*
-  const [itemCountItemA, setItemCountItemA] = useState(0);
-  const [itemCountItemB, setItemCountItemB] = useState(0);
-  const [itemCountItemC, setItemCountItemC] = useState(0);
-  */
-
-  let item1P = item1Price;
-
   //updates the state of the number of an item
   const handleChange1 = (event) => {
     const newCount = parseInt(event.target.value, 10);
     setItemCount1(newCount);
-    setItem1Price(item1Price * newCount);
+    // alert(newCount);
+    setItem1Price(item1UnitPrice * newCount);
   };
   const handleChange2 = (event) => {
     const newCount = parseInt(event.target.value, 10);
     setItemCount2(newCount);
-    setItem2Price(item2Price * newCount);
+    setItem2Price(item2UnitPrice * newCount);
   };
   const handleChange3 = (event) => {
     const newCount = parseInt(event.target.value, 10);
     setItemCount3(newCount);
-    setItem3Price(item3Price * newCount);
+    setItem3Price(item3UnitPrice * newCount);
   };
 
-  const clear1 = () => {
-    setItemCount1(0);
-    setItem1Price;
-    alert(jewellryAprice);
-    setItem1Price(jewellryAprice);
-  };
+  const clear1 = () => setItemCount1(0);
   const clear2 = () => setItemCount2(0);
   const clear3 = () => setItemCount3(0);
 
-  const InputElement = ({ change, currentVal }) => {
+  const InputElement = ({ change, currentVal, basePrice }) => {
     return <input onChange={change} value={currentVal} type="number" min="0" />;
   };
 
@@ -78,7 +79,9 @@ const BasketItems = ({
           <Buttons
             className="clearLine"
             buttonText="Clear"
-            onClick={() => clear1()}
+            onClick={() => {
+              clear1();
+            }}
           />
         </div>
         <div className="items">
@@ -120,6 +123,7 @@ const BasketContainer = () => {
   const [itemCountTshirtC, setItemCountTshirtC] = useState(0);
 
   const clearAll = () => {
+    //resets item counts
     setItemCountJewelryA(0);
     setItemCountJewelryB(0);
     setItemCountJewelryC(0);
@@ -129,32 +133,61 @@ const BasketContainer = () => {
     setItemCountTshirtA(0);
     setItemCountTshirtB(0);
     setItemCountTshirtC(0);
+
+    //resets item prices
+    setJewellryAPrice(0);
+    setJewellryBprice(0);
+    setJewellryCprice(0);
+    setMiscAPrice(0);
+    setMiscBprice(0);
+    setMiscCprice(0);
+    setShirtAprice(0);
+    setShirtBprice(0);
+    setShirtCprice(0);
+  };
+
+  const UnitPrice = ({ price }) => {
+    return <p className="unitPrice">Unit Price £{price}</p>;
   };
 
   //the below 9 variables represent the all the items for sale
-  const jewellryA = "Rose Gold Plated Plug Earrings";
-  const jewellryB = "Naga Gold & Silver Dragon Station Chain Bracelet";
-  const jewellryC = "Solitaire Diamond Promise Ring";
+  const jewellryA = "Rose Gold Plated Plug Earring - Unit Price: £10";
+  const jewellryB =
+    "Naga Gold & Silver Dragon Station Chain Bracelet - Unit Price: £5";
+  const jewellryC = "Solitaire Diamond Promise Ring - Unit Price: £15";
 
-  const miscItemA = "Rucksack";
-  const miscItemB = "Mens Cotton Jacket";
-  const miscItemC = " Women's 3-in-1 Snowboard Jacket Winter Coats";
+  const miscItemA = "Rucksack - Unit Price: £11";
+  const miscItemB = "Mens Cotton Jacket - Unit Price: £51 ";
+  const miscItemC =
+    " Women's 3-in-1 Snowboard Jacket Winter Coats - Unit Price: £18";
 
-  const tShirtA = "Mens Casual Premium Slim Fit T-Shirts";
-  const tShirtB = "Mens Casual Slim Fit";
-  const tShirtC = "Solid Short Sleeve Boat Neck V";
+  const tShirtA = "Mens Casual Premium Slim Fit T-Shirts - Unit Price: £10";
+  const tShirtB = "Mens Casual Slim Fit - Unit Price: £5";
+  const tShirtC = "Solid Short Sleeve Boat Neck V - Unit Price: £15";
 
-  const [jewellryAprice, setJewellryAPrice] = useState(10);
-  const [jewellryBPrice, setJewellryBprice] = useState(5);
-  const [jewellryCprice, setJewellryCprice] = useState(15);
+  const jwlryAunitPrice = 10;
+  const jwlryBunitPrice = 5;
+  const jwlryCunitPrice = 15;
 
-  const [miscAprice, setMiscAPrice] = useState(11);
-  const [miscBPrice, setMiscBprice] = useState(51);
-  const [miscCprice, setMiscCprice] = useState(18);
+  const miscAunitPrice = 11;
+  const miscBunitPrice = 51;
+  const miscCunitPrice = 18;
 
-  const [shirtAprice, setShirtAprice] = useState(10);
-  const [shirtBprice, setShirtBprice] = useState(5);
-  const [shirtCprice, setShirtCprice] = useState(15);
+  const tShirtAunitPrice = 10;
+  const tShirtBunitPrice = 5;
+  const tShirtCunitPrice = 15;
+
+  const [jewellryAprice, setJewellryAPrice] = useState(0);
+  const [jewellryBPrice, setJewellryBprice] = useState(0);
+  const [jewellryCprice, setJewellryCprice] = useState(0);
+
+  const [miscAprice, setMiscAPrice] = useState(0);
+  const [miscBPrice, setMiscBprice] = useState(0);
+  const [miscCprice, setMiscCprice] = useState(0);
+
+  const [shirtAprice, setShirtAprice] = useState(0);
+  const [shirtBprice, setShirtBprice] = useState(0);
+  const [shirtCprice, setShirtCprice] = useState(0);
 
   return (
     <div className="basket">
@@ -165,19 +198,24 @@ const BasketContainer = () => {
           item2={jewellryB}
           item3={jewellryC}
           //
-          item1Price={jewellryAprice}
-          setItem1Price={setJewellryAPrice}
-          item2Price={jewellryBPrice}
-          setItem2Price={setJewellryBprice}
-          item3Price={jewellryCprice}
-          setItem3Price={setJewellryCprice}
-          //
           itemCount1={itemCountJewelryA}
           setItemCount1={setItemCountJewelryA}
           itemCount2={itemCountJewelryB}
           setItemCount2={setItemCountJewelryB}
           itemCount3={itemCountJewelryC}
           setItemCount3={setItemCountJewelryC}
+          //
+          item1UnitPrice={jwlryAunitPrice}
+          item1Price={jewellryAprice}
+          setItem1Price={setJewellryAPrice}
+          //
+          item2UnitPrice={jwlryBunitPrice}
+          item2Price={jewellryBPrice}
+          setItem2Price={setJewellryBprice}
+          //
+          item3UnitPrice={jwlryCunitPrice}
+          item3Price={jewellryCprice}
+          setItem3Price={setJewellryCprice}
           clearAll={clearAll}
         />
       </div>
@@ -188,6 +226,7 @@ const BasketContainer = () => {
           item2={miscItemB}
           item3={miscItemC}
           //
+          item1UnitPrice={miscAunitPrice}
           itemCount1={itemCountMiscA}
           setItemCount1={setItemCountMiscA}
           itemCount2={itemCountMiscB}
@@ -197,9 +236,11 @@ const BasketContainer = () => {
           //
           item1Price={miscAprice}
           setItem1Price={setMiscAPrice}
+          item2UnitPrice={miscBunitPrice}
           item2Price={miscBPrice}
           setItem2Price={setMiscBprice}
           item3Price={miscCprice}
+          item3UnitPrice={miscCunitPrice}
           setItem3Price={setMiscCprice}
         />
       </div>
@@ -218,10 +259,13 @@ const BasketContainer = () => {
           setItemCount3={setItemCountTshirtC}
           //
           item1Price={shirtAprice}
+          item1UnitPrice={tShirtAunitPrice}
           setItem1Price={setShirtAprice}
+          item2UnitPrice={tShirtBunitPrice}
           item2Price={shirtBprice}
           setItem2Price={setShirtBprice}
           item3Price={shirtCprice}
+          item3UnitPrice={tShirtCunitPrice}
           setItem3Price={setShirtCprice}
         />
       </div>

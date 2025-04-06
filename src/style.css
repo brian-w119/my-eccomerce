@@ -290,4 +290,9 @@ img {
   background-color: grey;
   color: white;
   padding-top: 1.5%;
+  text-align: center;
+}
+
+.unitPrice {
+  font-weight: bold;
 }
