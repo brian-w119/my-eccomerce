@@ -1,6 +1,6 @@
 //this module contains the code for the inner section of the basket page
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import StoreName from "./StoreName";
 import Navs from "./Navs";
@@ -37,6 +37,8 @@ const BasketItems = ({
   item1UnitPrice,
   item2UnitPrice,
   item3UnitPrice,
+  setJewellryAPrice,
+  jewellryAPrice,
 }) => {
   //updates the state of the number of an item
   const handleChange1 = (event) => {
@@ -56,11 +58,23 @@ const BasketItems = ({
     setItem3Price(item3UnitPrice * newCount);
   };
 
-  const clear1 = () => setItemCount1(0);
-  const clear2 = () => setItemCount2(0);
-  const clear3 = () => setItemCount3(0);
+  //the below clear functions clears its rerspective item
+  const clear1 = () => {
+    setItemCount1(0);
+    setItem1Price(0);
+  };
 
-  const InputElement = ({ change, currentVal, basePrice }) => {
+  const clear2 = () => {
+    setItemCount2(0);
+    setItem2Price(0);
+  };
+
+  const clear3 = () => {
+    setItemCount3(0);
+    setItem3Price(0);
+  };
+
+  const InputElement = ({ change, currentVal }) => {
     return <input onChange={change} value={currentVal} type="number" min="0" />;
   };
 

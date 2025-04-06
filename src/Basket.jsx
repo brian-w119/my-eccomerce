@@ -2,6 +2,7 @@ import React from "react";
 import Navs from "./Navs";
 import StoreName from "./StoreName";
 import BasketContainer from "./BasketInnerSection";
+//import { Link } from "react-router-dom";
 
 const Buttons = (prop) => {
   return (

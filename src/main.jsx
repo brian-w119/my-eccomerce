@@ -11,6 +11,7 @@ import Category from "./Category";
 import Jewellry from "./selectCategory/Jewellry";
 import Misc from "./selectCategory/Misc";
 import Tshirts from "./selectCategory/Tshirts";
+import Checkout from "./Checkout";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
   {
     path: "/category/tshirts",
     element: <Tshirts />,
+  },
+  {
+    path: "/checkout",
+    element: <Checkout />,
   },
 ]);
 createRoot(document.getElementById("root")).render(
